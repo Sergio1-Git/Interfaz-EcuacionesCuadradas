@@ -27,7 +27,6 @@ public class Ejecutable extends javax.swing.JFrame {
         jDialog1 = new javax.swing.JDialog();
         background = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        btnCalcular = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         valorA = new javax.swing.JTextField();
@@ -47,6 +46,7 @@ public class Ejecutable extends javax.swing.JFrame {
         terminoCuadratico = new javax.swing.JLabel();
         terminoLineal = new javax.swing.JLabel();
         terminoInd = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         mensaje = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -98,7 +98,10 @@ public class Ejecutable extends javax.swing.JFrame {
         incognita_pt2 = new javax.swing.JLabel();
         raiz_figura2 = new javax.swing.JLabel();
         btnLimpiar1 = new javax.swing.JButton();
-        btnMostrar = new javax.swing.JButton();
+        btnCalcular = new javax.swing.JPanel();
+        labelBtnCalcular = new javax.swing.JLabel();
+        btnMostrar = new javax.swing.JPanel();
+        labelBtnCalcular1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -122,28 +125,8 @@ public class Ejecutable extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Calculadora de ecuaciones cuadráticas");
+        jLabel8.setText("Resuelve ecuaciones cuadráticas");
         background.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 920, -1));
-
-        btnCalcular.setBackground(new java.awt.Color(5, 128, 16));
-        btnCalcular.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btnCalcular.setForeground(new java.awt.Color(255, 255, 255));
-        btnCalcular.setText("Calcular");
-        btnCalcular.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCalcular.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnCalcularMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnCalcularMouseExited(evt);
-            }
-        });
-        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalcularActionPerformed(evt);
-            }
-        });
-        background.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 110, 40));
 
         btnLimpiar.setBackground(new java.awt.Color(255, 255, 0));
         btnLimpiar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -292,6 +275,11 @@ public class Ejecutable extends javax.swing.JFrame {
         );
 
         jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 20, 350, -1));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("->");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, -1, -1));
 
         background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 780, 140));
 
@@ -568,15 +556,65 @@ public class Ejecutable extends javax.swing.JFrame {
         });
         background.add(btnLimpiar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 640, 80, 40));
 
-        btnMostrar.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        btnMostrar.setText("Mostrar");
-        btnMostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMostrarActionPerformed(evt);
+        btnCalcular.setBackground(new java.awt.Color(5, 128, 16));
+        btnCalcular.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCalcular.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCalcularMouseClicked(evt);
             }
         });
-        background.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 330, -1, 40));
+
+        labelBtnCalcular.setBackground(new java.awt.Color(255, 255, 255));
+        labelBtnCalcular.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        labelBtnCalcular.setForeground(new java.awt.Color(255, 255, 255));
+        labelBtnCalcular.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelBtnCalcular.setText("Calcular");
+
+        javax.swing.GroupLayout btnCalcularLayout = new javax.swing.GroupLayout(btnCalcular);
+        btnCalcular.setLayout(btnCalcularLayout);
+        btnCalcularLayout.setHorizontalGroup(
+            btnCalcularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(labelBtnCalcular, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+        );
+        btnCalcularLayout.setVerticalGroup(
+            btnCalcularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnCalcularLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelBtnCalcular, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        background.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 330, 140, 40));
+
+        btnMostrar.setBackground(new java.awt.Color(0, 153, 204));
+        btnMostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMostrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMostrarMouseClicked(evt);
+            }
+        });
+
+        labelBtnCalcular1.setBackground(new java.awt.Color(255, 255, 255));
+        labelBtnCalcular1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        labelBtnCalcular1.setForeground(new java.awt.Color(255, 255, 255));
+        labelBtnCalcular1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelBtnCalcular1.setText("Mostrar ecuación");
+
+        javax.swing.GroupLayout btnMostrarLayout = new javax.swing.GroupLayout(btnMostrar);
+        btnMostrar.setLayout(btnMostrarLayout);
+        btnMostrarLayout.setHorizontalGroup(
+            btnMostrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(labelBtnCalcular1, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+        );
+        btnMostrarLayout.setVerticalGroup(
+            btnMostrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnMostrarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelBtnCalcular1, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        background.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -597,63 +635,6 @@ public class Ejecutable extends javax.swing.JFrame {
     private void btnLimpiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiar1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnLimpiar1ActionPerformed
-
-    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
-        btnMostrar.setVisible(false);
-        int a, b, c;
-
-        a = Integer.parseInt(valorA.getText());
-        b = Integer.parseInt(valorB.getText());
-        c = Integer.parseInt(valorC.getText());
-
-        if (a != 0) {
-
-            potencia.setText("2");
-
-            igual.setText("=");
-            cero.setText("0");
-
-            //CONDICIONES DE A PARA ORDENAR LA ECUACIÓN
-            if (a < 0) {
-                if (a == -1) {
-                    terminoCuadratico.setText("- X");
-                } else {
-                    terminoCuadratico.setText("- " + a * -1 + "X");
-                }
-            } else if (a > 0) {
-                if (a == 1) {
-                    terminoCuadratico.setText("X");
-                } else {
-                    terminoCuadratico.setText(a + "X");
-                }
-            }
-
-            //CONDICIONES DE B PARA ORDENAR LA ECUACIÓN
-            if (b < 0) {
-                if (b == -1) {
-                    terminoLineal.setText("-  X");
-                } else {
-                    terminoLineal.setText("-  " + b * -1 + "X");
-                }
-            } else if (b >= 0) {
-                if (b == 1) {
-                    terminoLineal.setText("+  X");
-                } else {
-                    terminoLineal.setText(" +   " + b + "X");
-                }
-            }
-
-            //CONDICIONES DE C PARA ORDENAR LA ECUACIÓN
-            if (c < 0) {
-                terminoInd.setText("-  " + c * -1);
-            } else {
-                terminoInd.setText("+  " + c);
-            }
-
-        } else {
-            mensaje.setText("Error, la regla dice que 'a' debe ser diferente de 0");
-        }
-    }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void valorCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_valorCKeyTyped
         JTextField campo = (JTextField) evt.getSource();
@@ -760,7 +741,7 @@ public class Ejecutable extends javax.swing.JFrame {
         igual2_pt4.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
-    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+    private void btnCalcularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalcularMouseClicked
         /*Creamos las variables que en una ecuacion serian a(termino cuadrado),
         b(termino lineal), c(termino independiente. Ejemplo: ax^2+bx+c=0*/
         int a, b, c;
@@ -849,18 +830,64 @@ public class Ejecutable extends javax.swing.JFrame {
         } else {
             mensaje.setText("No debe dejar ningun campo vacio");
         }
+    }//GEN-LAST:event_btnCalcularMouseClicked
 
-    }//GEN-LAST:event_btnCalcularActionPerformed
+    private void btnMostrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarMouseClicked
+        btnMostrar.setVisible(false);
+        int a, b, c;
 
-    private void btnCalcularMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalcularMouseExited
-        /*JButton boton = (JButton) evt.getSource();
-        boton.setBackground(Color.BLUE);*/
-    }//GEN-LAST:event_btnCalcularMouseExited
+        a = Integer.parseInt(valorA.getText());
+        b = Integer.parseInt(valorB.getText());
+        c = Integer.parseInt(valorC.getText());
 
-    private void btnCalcularMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalcularMouseEntered
-        /*JButton boton = (JButton) evt.getSource();
-        boton.setBackground(Color.GREEN);*/
-    }//GEN-LAST:event_btnCalcularMouseEntered
+        if (a != 0) {
+
+            potencia.setText("2");
+
+            igual.setText("=");
+            cero.setText("0");
+
+            //CONDICIONES DE A PARA ORDENAR LA ECUACIÓN
+            if (a < 0) {
+                if (a == -1) {
+                    terminoCuadratico.setText("- X");
+                } else {
+                    terminoCuadratico.setText("- " + a * -1 + "X");
+                }
+            } else if (a > 0) {
+                if (a == 1) {
+                    terminoCuadratico.setText("X");
+                } else {
+                    terminoCuadratico.setText(a + "X");
+                }
+            }
+
+            //CONDICIONES DE B PARA ORDENAR LA ECUACIÓN
+            if (b < 0) {
+                if (b == -1) {
+                    terminoLineal.setText("-  X");
+                } else {
+                    terminoLineal.setText("-  " + b * -1 + "X");
+                }
+            } else if (b >= 0) {
+                if (b == 1) {
+                    terminoLineal.setText("+  X");
+                } else {
+                    terminoLineal.setText(" +   " + b + "X");
+                }
+            }
+
+            //CONDICIONES DE C PARA ORDENAR LA ECUACIÓN
+            if (c < 0) {
+                terminoInd.setText("-  " + c * -1);
+            } else {
+                terminoInd.setText("+  " + c);
+            }
+
+        } else {
+            mensaje.setText("Error, la regla dice que 'a' debe ser diferente de 0");
+        }
+    }//GEN-LAST:event_btnMostrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -901,10 +928,10 @@ public class Ejecutable extends javax.swing.JFrame {
     private javax.swing.JLabel a4;
     private javax.swing.JLabel b2;
     private javax.swing.JPanel background;
-    private javax.swing.JButton btnCalcular;
+    private javax.swing.JPanel btnCalcular;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnLimpiar1;
-    private javax.swing.JButton btnMostrar;
+    private javax.swing.JPanel btnMostrar;
     private javax.swing.JLabel c2;
     private javax.swing.JLabel c4;
     private javax.swing.JLabel cero;
@@ -935,6 +962,7 @@ public class Ejecutable extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -948,6 +976,8 @@ public class Ejecutable extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel labelBtnCalcular;
+    private javax.swing.JLabel labelBtnCalcular1;
     private javax.swing.JLabel labelX1;
     private javax.swing.JLabel labelX2;
     private javax.swing.JLabel mas_pt2;
